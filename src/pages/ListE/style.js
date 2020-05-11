@@ -1,67 +1,76 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
   flex: 1;
-  padding: 30px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
-export const Header = styled.View`
+export const List = styled.FlatList.attrs({
+  // showsVerticalScrollIndicator: false,
+})``;
+export const Linha = styled.View`
   align-items: center;
-  padding-bottom: 20px;
+  flex-direction: row;
+  justify-content: space-between;
   border-bottom-width: 1px;
+  padding: 10px;
   border-color: rgba(0, 0, 0, 0.1);
 `;
 
-export const Avatar = styled.Image`
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background: rgba(0, 0, 0, 0.1);
-`;
-export const Name = styled.Text`
-  font-size: 20px;
-  color: #333;
-  font-weight: bold;
-  margin-top: 10px;
-  text-align: center;
-`;
-export const Bio = styled.Text`
-  font-size: 14px;
-  line-height: 18px;
-  color: #999;
-  margin-top: 5px;
-  text-align: center;
-`;
-export const Stars = styled.FlatList`
-  margin-top: 20px;
-`;
-export const Starred = styled.View`
-  background: #f5f5f5;
-  border-radius: 4px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  flex-direction: row;
-  align-items: center;
-`;
-export const OwnerAvatar = styled.Image`
-  height: 42px;
-  width: 42px;
-  border-radius: 21px;
-  background: rgba(0, 0, 0, 0.1);
-`;
-export const Info = styled.View`
-  margin-left: 10px;
-  flex: 1;
-`;
-export const Title = styled.Text.attrs({
+export const Produto = styled.Text.attrs({
   numberOfLines: 1,
 })`
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 18px;
   color: #333;
+  font-weight: bold;
+  margin-top: 4px;
+  text-align: auto;
+  width: 100px;
+  max-width: auto;
 `;
-export const Author = styled.Text`
-  font-size: 13px;
-  margin-top: 2px;
-  color: #666;
+
+export const QuantContainer = styled.View`
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80px;
+`;
+
+export const Quantidade = styled.Text`
+  font-size: 18px;
+  line-height: 18px;
+  color: #2c2c2c;
+`;
+
+export const QuantButton = styled.Text`
+  justify-content: center;
+  align-items: center;
+  background: #7172f1;
+  padding: 5px;
+  border-radius: 4px;
+`;
+
+export const Footer = styled.View`
+  border-top-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+`;
+
+export const FooterButton = styled(RectButton)`
+  justify-content: center;
+  align-items: center;
+  background: #7172f1;
+  border-radius: 4px;
+  padding: 0 12px;
+  margin-top: 20px;
+  margin-left: auto;
+`;
+export const FooterText = styled.Text`
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
 `;

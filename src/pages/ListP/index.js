@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconx from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-community/async-storage';
 import { Keyboard, ActivityIndicator } from 'react-native';
 import {
   Container,
@@ -25,6 +26,22 @@ export default class App extends Component {
     productList: [],
   };
 
+  async componentDidMount() {
+    // try {
+    //   await AsyncStorage.removeItem('users');
+    // } catch (e) {
+    //   // remove error
+    // }
+
+    // console.log('Done.');
+    const { navigation } = this.props;
+    const productList = await AsyncStorage.getItem('list');
+
+    if (productList) {
+      this.setState({ productList: JSON.parse(productList) });
+    }
+  }
+
   handleAdd = () => {
     const { productList, newProduct } = this.state;
     this.setState({
@@ -45,7 +62,6 @@ export default class App extends Component {
       return prod.product !== name;
     });
     this.setState({ productList: newList });
-    console.tron.log(newList);
   };
 
   handleAddAmount = (product) => {
@@ -72,8 +88,9 @@ export default class App extends Component {
 
   handleNavigation = () => {
     const { navigation } = this.props;
-
-    navigation.navigate('Lista de Produtos');
+    const { productList } = this.state;
+    AsyncStorage.setItem('list', JSON.stringify(productList));
+    navigation.navigate('Lista de Produtos', { productList });
   };
 
   render() {

@@ -38,14 +38,14 @@ export const SubmitButton = styled(RectButton)`
 
 export const List = styled.FlatList.attrs({
   // showsVerticalScrollIndicator: false,
-})`
-  margin-top: 20px;
-`;
+})``;
 export const Linha = styled.View`
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 0 0px 30px;
+  justify-content: flex-start;
+  border-bottom-width: 1px;
+  padding: 10px;
+  border-color: rgba(0, 0, 0, 0.1);
 `;
 
 export const Produto = styled.Text.attrs({
@@ -55,7 +55,8 @@ export const Produto = styled.Text.attrs({
   color: #333;
   font-weight: bold;
   margin-top: 4px;
-  text-align: center;
+  text-align: auto;
+  width: 100px;
   max-width: 150px;
 `;
 
@@ -64,6 +65,8 @@ export const QuantContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100px;
+  margin-right: 3px;
+  margin-left: auto;
 `;
 
 export const Quantidade = styled.Text`
@@ -86,7 +89,7 @@ export const DeleteButton = styled(RectButton)`
   background: #7172f1;
   border-radius: 4px;
   padding: 10px;
-  margin-left: 10px;
+  margin-left: auto;
 `;
 
 export const Footer = styled.View`

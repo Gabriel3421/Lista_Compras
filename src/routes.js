@@ -12,7 +12,7 @@ function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Usuários"
+        initialRouteName="BuyList"
         screenOptions={{
           headerBackTitleVisible: false,
           headerTitleAlign: 'center',
